@@ -1,3 +1,4 @@
+import { TitleService } from './title.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
@@ -18,7 +19,7 @@ import { MaskPipe } from './mask.pipe';
     FormsModule,
     HttpModule
   ],
-  providers: [],
+  providers: [TitleService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

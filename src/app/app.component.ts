@@ -1,3 +1,4 @@
+import { TitleService } from './title.service';
 import { Component } from '@angular/core';
 
 @Component({
@@ -6,8 +7,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app works!';
   keyword = "";
+
+  constructor(public titleSvc: TitleService) {
+  }
 
   changeKeyword(evt: KeyboardEvent) {
     this.keyword = (evt.target as HTMLInputElement).value;

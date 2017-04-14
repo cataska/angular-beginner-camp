@@ -1,3 +1,4 @@
+import { TitleService } from './../title.service';
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
@@ -7,24 +8,19 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  @Input()
-  title = "保哥的網頁";
-
-  @Output()
-  titleChanged = new EventEmitter();
-
   is_h3_highlight = false;
 
   counter = 0;
 
-  constructor() { }
+  constructor(public titleSvc: TitleService) {
+
+  }
 
   ngOnInit() {
   }
 
   changeTitle(evt: MouseEvent) {
-    this.title = "The Will Will ~Web";
-    this.titleChanged.emit(this.title);
+    this.titleSvc.title = "The Will Will ~Web";
     console.log(evt);
     console.log(evt.clientX);
     this.counter++;
