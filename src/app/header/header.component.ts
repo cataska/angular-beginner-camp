@@ -7,11 +7,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  title = "保哥的網頁"
+  title = "保哥的網頁";
 
   constructor() { }
 
   ngOnInit() {
   }
 
+  changeTitle(evt: MouseEvent) {
+    this.title = "The Will Will ~Web";
+    console.log(evt);
+    console.log(evt.clientX);
+  }
 }
