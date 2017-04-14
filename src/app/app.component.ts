@@ -8,4 +8,8 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'app works!';
   keyword = "";
+
+  changeKeyword(evt: KeyboardEvent) {
+    this.keyword = (evt.target as HTMLInputElement).value;
+  }
 }
