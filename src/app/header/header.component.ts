@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-header',
@@ -9,6 +9,9 @@ export class HeaderComponent implements OnInit {
 
   @Input()
   title = "保哥的網頁";
+
+  @Output()
+  titleChanged = new EventEmitter();
 
   is_h3_highlight = false;
 
@@ -21,6 +24,7 @@ export class HeaderComponent implements OnInit {
 
   changeTitle(evt: MouseEvent) {
     this.title = "The Will Will ~Web";
+    this.titleChanged.emit(this.title);
     console.log(evt);
     console.log(evt.clientX);
     this.counter++;
